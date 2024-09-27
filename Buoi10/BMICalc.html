@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contain{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            width: 300px;
+            background-color: aqua;
+        }
+        .contain input{
+            height: 10%;
+            margin-top: 5px;
+        }
+        .contain .kq{
+            margin-top: 15px;
+        }
+        .contain button{
+            width: 30%;
+            margin-top: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <p>BMI Calc</p>
+        <input type="number" placeholder="Cân nặng (kg)" id="weight"> 
+        <input type="number" placeholder="Cao (m)" id="height">
+        <input type="text" placeholder="Kết quả" class="kq" id="bmiResult">
+        <input type="text" placeholder="Phan loai" id="classify">
+        <button onclick="calc()">Calc</button>
+    </div>
+    <script>
+        
+        function calc(){
+            const weight = parseFloat(document.getElementById("weight").value);
+            const height = parseFloat(document.getElementById("height").value);
+
+            const bmiResultElement = document.getElementById("bmiResult");
+            const classifyResult = document.getElementById("classify");
+            const calcBMI = weight/(height*height);
+            
+            bmiResultElement.value = calcBMI.toFixed(2);
+
+            if(calcBMI<18.5){
+                classifyResult.value = "Gay"
+                }else if(calcBMI<24.9 && calcBMI>18.5){
+                classifyResult.value ="Binh thuong"
+                        }else if(calcBMI<29.9 && calcBMI>25){
+                            classifyResult.value= "Tien beo phi"
+                            }else if(calcBMI<34.9 && calcBMI>30){
+                                classifyResult.value= "Beo phi do I"
+                                }else if(calcBMI<39.9 && calcBMI>35){
+                                    classifyResult.vlaue= "Beo phi do II"
+                                }else{
+                                    classifyResult.value="Beo phi do III"
+                                }
+        }
+        
+        
+    </script>
+</body>
+</html>

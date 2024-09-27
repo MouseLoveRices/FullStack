@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="res"></ul>
+    <script>
+        let students=[
+            {id:1,name:"Le Meo",age:4, checked:false},
+            {id:2,name:"Le Tho",age:6, checked:true},
+            {id:3,name:"Le Nai",age:8, checked:false},
+            {id:4,name:"Le Ga",age:10, checked:false},           
+        ]
+        if(localStorage.getItem("students")){
+            students = JSON.parse(localStorage.getItem("students"));
+        }
+
+        function loadStudent(){
+            res.innerHTML=""
+            students.map(student=>{
+                let li=document.createElement("li")
+                let p=document.createElement("p")
+                p.innerHTML=students.name
+                if(student.checked){
+                    p.className="active"
+                }
+                p.addEventListener("click",()=>{
+                    editStudent(student.id)
+                })
+                li.appendChild(i)
+
+            res.appendChild(li)
+            })
+        }
+        function editStudent(id){
+            students=students.map(st=>st.id==id?{...st,checked:!st.checked}:st)
+            console.log(students)
+            loadStudent();
+            localStorage.setItem("students", JSON.stringify(students))
+        }
+        function removebyId(id){
+            console.log(id)
+                students = student.fliter(st=>st.id!=id)
+                loadStudent()
+                localStorage.setItem("stuents",JSON.stringify(students))
+        }
+        addNew.addEventListener("keydown", function(e){
+            if(e.key=="Enter"){
+                addStudent();
+            }
+        })
+        function addStudent(){
+            let idMax = students.reduce((max_value,student) => Math.max(max_value, student.id), -Infinity)
+            students = [...students,{id:students.length==0?1:idMax+1,name:addNew.value,age:20}]
+            loadStudent();
+            addNew.value=""
+            console.log(students)
+            localStorage.setItem("students",JSON.stringify(students))
+        }
+    </script>
+</body>
+</html>

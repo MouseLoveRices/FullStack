@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [4,6,9,2,5,7,1,8]
+        function swap(arr, a,b){
+            [arr[a],arr[b]] = [arr[b],arr[a]]
+        }
+        for(let i=0; i<arr.length;i++){
+            let minIndex=i
+            for(let j=i+1; j<arr.length; j++){
+                (arr[j]<arr[minIndex])?minIndex=j:console.log()
+                
+            }
+            if(minIndex != i){
+                swap(arr, i, minIndex)
+            }
+            console.log(arr)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .contain{
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        line-height: 100px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="contain" id="board">
+        <div class="box" data-id="0"></div>
+        <div class="box" data-id="1"></div>
+        <div class="box" data-id="2"></div>
+        <div class="box" data-id="3"></div>
+        <div class="box" data-id="4"></div>
+        <div class="box" data-id="5"></div>
+        <div class="box" data-id="6"></div>
+        <div class="box" data-id="7"></div>
+        <div class="box" data-id="8"></div>
+    </div>
+    <p id="res"></p>
+    <button class="New">New Game</button>
+    <script>    
+    let boxs = document.querySelectorAll(".contain .box")
+    let btn = document.querySelector(".New")
+    let flag = true
+    let arr = ["","","","","","","","",""]
+    
+    for(let i =0; i< boxs.length; i++){
+        boxs[i].addEventListener("click", show)
+    }   
+
+    btn.addEventListener("click", newGame)
+
+
+    function newGame(){
+        location.reload()
+    }
+
+
+    function show(){
+        let a=0
+        if(flag == true){
+            this.innerHTML="X"
+            arr[this.getAttribute("data-id")]='X'
+            this.style.background="aqua"
+            flag=false
+        }else{
+            this.innerHTML="O"
+            arr[this.getAttribute("data-id")]='O'
+            this.style.background="lime"
+            flag=true
+        }
+        this.style.pointerEvents="none";
+        console.log(arr)
+        
+        
+            if(checkWin()!=false){
+            res.innerHTML=checkWin()+" Win"
+            board.style.pointerEvents="none";
+            } 
+            if(checkDraw() != false){
+                return checkDraw();
+            }
+            
+        
+    }
+    function checkWin(){
+        if(arr[0]==arr[1] && arr[1]==arr[2] && arr[0]!=""){
+            return arr[0]
+        }else if(arr[3]==arr[4] && arr[4]==arr[5] && arr[3]!=""){
+            return arr[3]
+        }else if(arr[6]==arr[7] && arr[6]==arr[8] && arr[6]!=""){
+            return arr[6]
+        }else if(arr[0]==arr[3] && arr[0]==arr[6] && arr[0]!=""){
+            return arr[0]
+        }else if(arr[1]==arr[4] && arr[1]==arr[7] && arr[1]!=""){
+            return arr[1]
+        }else if(arr[2]==arr[5] && arr[2]==arr[8] && arr[2]!=""){
+            return arr[2]
+        }else if(arr[0]==arr[4] && arr[0]==arr[8] && arr[0]!=""){
+            return arr[0]
+        }else if(arr[2]==arr[4] && arr[6]==arr[2] && arr[2]!=""){
+            return arr[2]
+        }
+        return false;
+    }
+    function checkDraw(){
+        if(checkWin()==false && (arr[0]!="" && arr[1] !="" && arr[2] !="" && arr[3] !="" && arr[4] !="" && arr[5] !="" && arr[6] !="" && arr[7] !="" && arr[8] !="")){
+            res.innerHTML=" Draw"
+            board.style.pointerEvents="none";
+        }
+        return false;
+
+    }
+    </script>
+</body>
+
+</html>

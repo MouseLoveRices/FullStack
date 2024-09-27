@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bai tap 1</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .mail{
+            word-wrap: break-word; /*xuong dong khi kich thuong man hinh khong du trong truong hop cac tu khong co khoan trang*/
+            overflow: hidden;
+        }
+        body{
+            line-height: 30px;
+        }
+        h1{
+            margin-bottom: 20px;
+            color: #fff;
+            position: relative;
+        }
+        i{
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+        h1:before{
+            content: '';
+            width: 30%;
+            height: 2px;
+            background-color: aqua;
+            position: absolute;
+            top: 100%;
+            left: 0%;
+        }
+        .logo a{
+            text-decoration: none;
+            color: aqua; 
+            opacity: 0.5;
+        }
+        p{
+            color: #fff;
+            opacity: 0.3;
+            margin-top: 10px;
+        }
+        .logo i{
+            font-size: 10px;
+            opacity: 0.3;
+            font-size: 25px;
+            color: #fff;
+        }
+        .touch #icon{
+            color: aqua;
+            font-size: 25px;
+        }
+        .touch p{
+            display: flex;
+            align-self: center;
+        }
+
+        .footer{
+            width: 130vh;
+            padding: 40px;
+            background-image: url('/img/bg_6.jpg');    
+            display: flex;
+            flex-wrap: wrap;           
+            justify-content: space-between;
+        }
+        .footer .logo img{
+            width: 70%;
+
+        }
+        .footer .item{
+            width: calc(100% / 4);
+        }
+        @media screen and (max-width: 1000px) {
+            .footer .item i{
+                font-size: 15px;
+            }
+            .footer .item {
+                width: calc(100% / 3) ;
+                font-size: 10px;
+                padding: 2px;
+            }
+            
+            .footer{
+                width: 730px;
+            }
+            
+        }
+        @media screen and (max-width: 700px) {
+            .footer .item i{
+                font-size: 15px;
+            }
+            .footer .item {
+                width: calc(100% / 2) ;
+                font-size: 10px;
+                padding: 2px;
+            }
+            h1{
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            i{
+                margin-right: 15px;
+                margin-top: 10px;
+            }
+            .footer{
+                width: 430px;
+            }
+            
+        }
+        @media screen and (max-width: 400px) {
+            .footer .item i{
+                font-size: 15px;
+            }
+            .footer .item {
+                width: 100%;
+                font-size: 10px;
+                padding: 2px;
+            }
+            
+            .footer{
+                width: 230px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="footer">
+        <div class="logo item">
+            <img src="/img/logo_3.png" alt="">
+            <p>We give value to excellence and top lass engineers, nut in terms of accurate service</p>  
+            <a href="">Read More >></a>
+            <div class="icon">
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div> 
+        </div>
+        <div class="solution item">
+            <h1>Our Solution</h1>
+            <div class="show">
+            <p>- Power And Energy</p>
+            <p>- Oil and Lubricant</p>
+            <p>- Meterial Egineering</p>
+            <p>- Chemical Research</p>
+            <p>- alternate Energy</p>
+            </div>
+        </div>
+        <div class="link item">
+            <h1>Quick Links</h1>
+            <p>- About Us</p>
+            <p>- News</p>
+            <p>- Testimonials</p>
+            <p>- Request A Quote</p>
+            <p>- FAQ</p>
+        </div>
+        <ul class="touch item">
+            <h1>Get In Touch</h1>
+            <p><a><i class="fa-solid fa-location-dot" id="icon"></i></a> <a>Lorence 542B, Tailstoi Town 5248 MT, Worldwide Country</a> </p>
+            <p><a><i class="fa-solid fa-phone" id="icon"></i></a> <a>01865 524 8503</a></p>
+            <p><a><i class="fa-regular fa-envelope" id="icon"></i></a> <a class="mail">Info@Woodwrkshop.Com</a></p>
+            <p><a><i class="fa-solid fa-stopwatch" id="icon"></i></a> <a>Mon-Sat: 9am to 6pm</a></p>
+        </ul>
+    </div>
+</body>
+</html>

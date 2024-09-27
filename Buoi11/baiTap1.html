@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 1</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .contain{
+            width: 450px;
+            height: 150px;
+            flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            background: aqua;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contain" id="container">
+
+    </div>
+    <div class="res">
+    </div>
+    <button class="crt">Create</button>
+    <script>
+        let btn = document.querySelector(".crt")
+        let contain = document.querySelectorAll(".contain")
+        let res = document.querySelectorAll(".res")
+        btn.addEventListener("click", createBox)
+
+        function createBox() {
+            const box1 = document.createElement("div");
+            box1.innerHTML = randomValue();
+            let a = Number(box1.innerHTML)
+            box1.className = "box";
+            contain[0].innerHTML =""
+            contain[0].appendChild(box1);
+
+            const box2 = document.createElement("div");
+            box2.innerHTML = randomValue();
+            let b = Number(box2.innerHTML)
+            box2.className = "box";
+            contain[0].appendChild(box2);
+
+            const box3 = document.createElement("div");
+            box3.innerHTML = randomValue();
+            let c = Number(box3.innerHTML)
+            box3.className = "box";
+            contain[0].appendChild(box3);
+
+            let x = a + b + c ;
+
+            const p = document.createElement("p")
+            p.innerHTML= x
+            res[0].innerHTML =""
+            res[0].appendChild(p)
+
+        }
+        function randomValue(){
+            let x = Math.floor((Math.random() * 6) + 1);
+            return x;
+        }
+    </script>
+</body>
+
+</html>

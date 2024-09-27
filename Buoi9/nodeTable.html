@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    <div class="contain">
+
+    </div>
+    <button onclick="createTable()">Create table</button>
+    <script>
+        let contain = document.getElementsByClassName("contain")
+        function createTable(){      
+            let table = document.createElement("table")
+            
+            //table row 1
+            let tr = document.createElement("tr")
+            let th = document.createElement("th")
+            th.innerHTML = "Name"
+            tr.appendChild(th)
+
+            th = document.createElement("th")
+            th.innerHTML = "Age"
+            tr.appendChild(th)
+
+            table.appendChild(tr)
+
+            //table row 2
+            tr = document.createElement("tr")
+            let td = document.createElement("td")
+            td.innerHTML = "Lee Sin"
+            tr.appendChild(td)
+
+            td = document.createElement("td")
+            td.innerHTML = "40"
+            tr.appendChild(td)
+
+            table.appendChild(tr)
+
+            //table row 3
+            tr = document.createElement("tr")
+            td = document.createElement("td")
+            td.innerHTML = "Zed"
+            tr.appendChild(td)
+
+            td = document.createElement("td")
+            td.innerHTML = "30"
+            tr.appendChild(td)
+
+            table.appendChild(tr)
+
+            contain[0].appendChild(table);
+        }
+    </script>
+</body>
+</html>

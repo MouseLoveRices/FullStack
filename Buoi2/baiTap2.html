@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bai tap 2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(55deg, aqua, orangered);
+            height: 100vh;
+            padding: 50px 50px;
+        }
+        .total{
+            background-color: #fff;
+            width: 2000px;
+            height: 800px;
+            justify-content: space-between;
+        }
+        .contain{           
+            display: flex;
+            width: 90%;
+            margin: 0 auto;
+            background-color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .contain .clock{
+            width: 25%;
+            height: 100%;
+            object-fit: fill;
+            text-align: center;
+
+        }      
+        .tittle{
+            width: 100%;
+            height: 10%;
+            font-size: 38px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .clock{
+            transition: 500ms;
+        }
+        .clock:hover{
+            transform: translateY(-20px);
+        }
+        .clock img{
+            width: 100%;
+            transition: 1s;
+        }
+        .clock img:hover{
+            transform: scale(1.2);
+        }
+        .clock .name{
+            transition: 100ms;
+            margin: 5px;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+        .clock .name:hover{
+            color: rgb(212, 109, 109);
+        }
+        .clock p{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .clock .type, .clock .price, .clock .icon a{
+            opacity: 0.6;
+        }
+        .clock #link{
+            text-decoration: none;
+            color: black;
+            opacity: 0.6;
+            margin-top: 20px;
+            display: block;          
+        }
+        .clock #link:hover{
+            color: aqua;
+        }
+        .icon .star{
+            color: rgb(231, 217, 13);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="total">
+        <div class="tittle"><p>Trending products</p></div> 
+    <div class="contain">            
+        <div class="clock clock1">
+            <img src="/img/product_1.jpg" alt="">
+            <p class="type">Fossil</p>
+            <p class="name">Bering rose gold steal mesh</p>
+            <p class="price">$100 - $350</p>
+            <div class="icon">
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <a>(1 review)</a>
+            </div>
+            <a href="#" id ="link">Add to cart</a>
+        </div>
+        <div class="clock clock2">
+            <img src="/img/product_2.jpg" alt="">
+            <p class="type">Maserati</p>
+            <p class="name">Xorus youth black red</p>
+            <p class="price">$100 - $350</p>
+            <div class="icon">
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <a>(1 review)</a>
+                <a href="#" id ="link">Add to cart</a>
+            </div>
+        </div>
+        <div class="clock clock3">
+            <img src="/img/product_3.jpg" alt="">
+            <p class="type">Fossil</p>
+            <p class="name">Bering aurora collection</p>
+            <p class="price">$100 - $350</p>
+            <div class="icon">
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <a>(1 review)</a>
+                <a href="#" id ="link">Add to cart</a>
+            </div>
+        </div>
+        <div class="clock clock4">
+
+            <img src="/img/product_4.jpg" alt="">
+            <p class="type">Fossil</p>
+            <p class="name">Timberland heritage reimagined</p>
+            <p class="price">$100 - $350</p>
+            <div class="icon">
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <a>(1 review)</a>
+                <a href="#" id ="link">Add to cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

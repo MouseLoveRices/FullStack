@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .blue{
+            color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kibutsuji Muzan</h1>
+    <h2>Kamado Tanjiro</h2>
+
+    <p>This is a katana</p>
+    <p>This is sun breath</p>
+
+    <button>Toggle class</button>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("h1,h2,p").toggleClass("blue")
+            })
+        })
+    </script>
+</body>
+</html>

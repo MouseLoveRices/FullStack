@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color</title>
+    <style>
+        .contain{
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(55deg, aqua, orangered);
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            padding: 30%;
+            clip-path: circle(50% at 50% 50%);
+        }
+        h1{
+            color: rgb(131, 211, 11);
+            text-shadow: rgba(0, 0, 0, 0.45) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;          
+        }
+        .flexBox{
+            width: 400px;
+            height: 300px;
+            border: 2px solid red;    
+            margin: 100px 0;
+            display: flex;
+            justify-content: space-around; /*khoang cach giua cac item nhung khong sat le*/
+            justify-content: space-between; 
+        }   
+        .flexBox .box{
+            width: 60px;
+            height: 60px;
+            border: 1px solid greenyellow;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexBox">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+    <div class="contain">
+        <h1>SHADOW</h1>
+    </div>
+
+</body>
+</html>  

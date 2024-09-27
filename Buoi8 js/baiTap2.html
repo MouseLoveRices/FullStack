@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumOfInverses(n) {
+        let sum = 1;
+        let factorial = 1;
+
+        for (let i = 2; i <= n; i++) {
+            factorial *= i;
+            sum += 1 / factorial;
+        }
+            return sum;
+        }
+
+    const n = 5;
+    const sum = sumOfInverses(n);
+    console.log(`The sum of inverses of factorials from 1 to 1/${n}! is: ${sum}`);
+    </script>
+</body>
+</html>

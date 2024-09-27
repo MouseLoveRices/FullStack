@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 1</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background: orange;
+        }
+        .construct{
+            padding: 10px;
+            width: 1000px;
+            height: 700px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+        }
+        .construct .radioBtn{
+            width: 20%;
+            height: 16%;
+            margin-bottom: 10px;
+            display: flex;
+            text-align: center;
+        }
+        .construct .radioBtn .tai,
+        .construct .radioBtn .xiu{
+            width: 50%;
+            height: 100%;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+        }
+        .contain{
+            width: 450px;
+            height: 150px;
+            flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+            background: aqua;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            background: aqua;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 130px;
+        }
+        .construct .resValue{
+            background: greenyellow;
+            display: flex;
+            margin-top: 10px;
+        }
+        .construct .price{
+            width: 10%;
+            height: 5%;
+            margin-bottom: 10px;
+        }
+        .construct .history{
+            position: absolute;
+            top: 80%;
+        }
+        .construct .crt{
+            position: absolute;
+            width: 10%;
+            height: 10%;
+            top: 85%;
+            background: linear-gradient(50deg, aqua, rgb(225, 23, 225));
+        }
+        .construct #removeHistory{
+            position: absolute;
+            width: 10%;
+            height: 10%;
+            top: 85%;
+            left: 10%;
+            background: linear-gradient(50deg, aqua, rgb(225, 23, 225));
+        }
+        .construct #newGame{
+            position: absolute;
+            width: 10%;
+            height: 10%;
+            top: 85%;
+            left: 30%;
+            background: linear-gradient(50deg, aqua, lime);
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="construct">
+        <h1>Game</h1>
+        <h2>You have <a id="money"></a>$</h2>
+        <div class="radioBtn">
+            <div class="tai">
+                <h2>Tai</h2>
+                <input type="radio" name="game" value="tai">
+            </div>
+            <div class="xiu">
+                <h2>Xiu</h2>
+                <input type="radio" name="game" value="xiu">
+            </div>         
+        </div>
+        <input type="number" placeholder="Cược Nhiu ?" class="price">
+        <div class="contain" id="container">
+
+        </div>
+        <div class="resValue">
+            <p>Nổ hũ: <a class="res"></a></p>
+        </div>
+        <h3 id="resGame"></h3>
+        <div class="history">
+            <p id="historyValue"><a>Lịch sử: </a></p>
+        </div>
+        <button class="crt">Chơi</button> 
+        <button id="newGame">Chơi lại</button>
+        <button id="removeHistory">Xóa lịch sử</button>
+    </div>
+    <script>
+        let btn = document.querySelector(".crt")
+        let contain = document.querySelectorAll(".contain")
+        let res = document.querySelectorAll(".res")
+        let money = document.querySelectorAll("#money")
+        let priceInput = document.querySelector(".price");
+        let resGame = document.getElementById("resGame");
+        let newGamebtn = document.getElementById("newGame");
+        let historyValue = document.getElementById("historyValue");
+        let dlt = document.querySelector("#removeHistory")
+
+        btn.addEventListener("click", createBox)
+        newGamebtn.addEventListener("click", newGame)
+        dlt.addEventListener("click", rm)
+
+        let atag = document.createElement("a")
+            atag.innerHTML = 500
+            let total = Number(atag.innerHTML)
+            money[0].appendChild(atag)
+        
+        function createBox() {
+            const box1 = document.createElement("div");
+            box1.innerHTML = randomValue();
+            let a = Number(box1.innerHTML)
+            box1.className = "box";
+            contain[0].innerHTML =""
+            contain[0].appendChild(box1);
+
+            const box2 = document.createElement("div");
+            box2.innerHTML = randomValue();
+            let b = Number(box2.innerHTML)
+            box2.className = "box";
+            contain[0].appendChild(box2);
+
+            const box3 = document.createElement("div");
+            box3.innerHTML = randomValue();
+            let c = Number(box3.innerHTML)
+            box3.className = "box";
+            contain[0].appendChild(box3);
+
+            let x = a + b + c ;
+
+            const aRes = document.createElement("a")
+            aRes.innerHTML= x
+            res[0].innerHTML =""
+            res[0].appendChild(aRes)
+            
+            let selectedGame = document.querySelector('input[name="game"]:checked');
+            if (!selectedGame) {
+                alert("Please select Tai or Xiu!");
+                return;
+            }
+
+            let gameValue = selectedGame.value;
+
+            let betAmount = Number(priceInput.value);
+
+            if (isNaN(betAmount) || betAmount <= 0) {
+                alert("Please enter a valid bet amount!");
+                return;
+            }
+
+            if ((gameValue === "tai" && x >= 10) || (gameValue === "xiu" && x < 10)) {
+                total += betAmount;
+            } else {
+                total -= betAmount;
+            }
+
+            atag.innerHTML = total;
+            money[0].appendChild(atag);
+
+            saveHistory(x);
+
+            if (total <= 0) {
+                resGame.innerHTML = "Out of money";
+                btn.style.pointerEvents = "none";
+                newGamebtn.style.display = "block";                
+            }
+        }
+        function randomValue(){
+            let x = Math.floor((Math.random() * 6) + 1);
+            return x;
+        }
+
+        function newGame(){
+            location.reload()
+        }
+
+
+        function saveHistory(value) {
+            let history = JSON.parse(localStorage.getItem("history")) || [];
+            history.push(value);
+            localStorage.setItem("history", JSON.stringify(history));
+            displayHistory();
+        }
+
+        function displayHistory() {
+            let history = JSON.parse(localStorage.getItem("history")) || [];
+            let historyText = "Lịch sử: " + history.join(", ");
+            historyValue.innerHTML = `<a>${historyText}</a>`;
+        }
+
+        // Hiển thị lịch sử khi trang được tải lại
+        window.onload = function() {
+            displayHistory();
+        };
+        function rm(){
+            localStorage.removeItem("history");
+            displayHistory();
+        }
+        //https://docs.google.com/presentation/d/1JEjVYjSyDmK40_DUykJNSrtxw9UyF515/edit#slide=id.p50
+    </script>
+</body>
+
+</html>

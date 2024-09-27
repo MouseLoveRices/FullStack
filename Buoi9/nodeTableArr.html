@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contain">
+
+    </div>
+    <button onclick="create()">Create</button>
+    <script>
+        let contain = document.getElementsByClassName("contain")
+        let arr = [
+            { name: 'Mèo', age: 15 },
+            { name: 'gà', age: 18 },
+            { name: 'thỏ', age: 20 },
+            { name: 'zịt', age: 21 }
+        ]
+        function create() {
+            let table = document.createElement("table")
+            table.addEventListener('click', changeBg)
+            let tr = document.createElement("tr")
+            let th = document.createElement("th")
+            th.innerHTML = "Name"
+            tr.appendChild(th)
+            
+            th = document.createElement("th")
+            th.innerHTML = "Age"
+            tr.appendChild(th)
+
+            table.appendChild(tr)
+
+            contain[0].appendChild(table)
+
+            for (let item of arr) {
+                tr = document.createElement("tr")
+                let td = document.createElement("td")
+               
+                td.innerHTML = item.name
+                tr.appendChild(td)
+
+                td = document.createElement("td")
+                td.innerHTML = item.age
+                tr.appendChild(td)
+
+                table.appendChild(tr)
+            }
+        }  
+        function changeBg(){
+            contain[0].style.color="aqua"
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #contain{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        #contain.active{
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(50deg, aqua, rgb(165, 52, 165));
+            
+        }
+         /*#contain.active viet lien nhau co nghia la class active va id contain la cua cung mot the trong html  */
+        
+        .menu ul{
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+        }
+        .menu ul li{
+            margin-left: 5px;
+            
+        }
+        .menu ul li a{
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+        }
+        .menu ul li.active a{
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contain">
+
+    </div>
+    
+    <button onclick="addClass()">add class</button>
+    <button onclick="removeClass()">remove class</button>
+    <button onclick="toggleClass()">toggle class</button>
+
+
+    <div class="menu">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Prices</a></li>
+            <li><a href="">Shop</a></li>
+            <li><a href="">Product</a></li>
+            <li><a href="">More</a></li>
+        </ul>
+    </div>
+    <script>
+        function addClass(){
+            contain.classList.add("active")
+        }
+        function removeClass(){
+            contain.classList.remove("active")
+        }
+        function toggleClass(){
+            contain.classList.toggle("active") //toggle la bat tat, bam mot lan de them, bam lan nau de xoa
+        }
+
+        let list = document.querySelectorAll(".menu ul li")
+        for(let i=0; i< list.length; i++){
+            list[i].addEventListener("mouseover", handle_active)
+        }
+        function handle_active(){
+            for(let i=0; i< list.length; i++){
+                list[i].classList.remove("active")
+            }
+            this.classList.add("active")
+        }
+    </script>
+</body>
+</html>

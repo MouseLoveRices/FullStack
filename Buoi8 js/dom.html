@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contain">
+        <div class="meo">
+       <p>Con meo ngok ngheck</p> 
+    </div>
+    <div id="tho"><p>Con tho trang</p></div>
+    <h1>H1 ne</h1>
+    <h1>H1 thu 2 ne</h1>
+    <input type="text" id="hoten" />
+    <button onclick="change()">Change</button>
+    <button onclick="changeColor()">Change color</button>
+    </div>
+    
+    <script>
+        let contain =document.getElementsByClassName("contain")
+        let hoten = document.getElementById("hoten")
+        let meo = document.getElementsByClassName("meo")
+        console.log(meo[0]) // them [0] de console tra ve kieu chuoi, [0] la phan tu dau tien
+        let tho = document.getElementById("tho")
+        console.log(tho)
+        let h1 = document.getElementsByTagName("h1")
+        
+        console.log(h1)
+        console.log(h1[0])
+        console.log(h1[1])
+        function change(){
+            h1[0].innerHTML="Dong nay da thay doi"
+            hoten.value="hello" // dung innerHtml de thay doi noi dung trong the, value de thay doi noi dung trong input
+            meo[0].style.color="red"
+            h1[0].style.color="green"
+            h1[0].style.fontSize="50px"
+        }
+
+        function changeColor(){
+            contain[0].style.height="50vh"
+            contain[0].style.background="aqua" // dung style de thay doi mau sac nhu dinh dang css, [0] la contain thu 1
+        }
+
+    </script>
+</body>
+</html>

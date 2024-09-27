@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #c9ccd1;
+            text-align: center;
+        }
+        .contain{
+            width: 396px;
+            background-color: #fff;
+            margin: 100px auto;
+            padding: 15px;
+        }
+        .contain input[type='text'], .contain input[type='password'], .contain input[type='submit']{
+            width: 100%;
+            padding:  16px 14px;
+            font-size: 17px;
+            margin-bottom: 15px;
+            outline-color: blue;
+            border-radius: 5px;
+        }
+        .contain input[type='submit']{
+            border: none;
+            background-color: rgb(21, 136, 212);
+            
+        }
+        #forget{
+            color: blue;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            display: block;
+        }
+        button{
+            width: 50%;
+            padding: 17px;
+            background-color: green;
+            color: #fff;
+            border:none;
+            border-radius:6px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contain">
+            <form>
+                <input type="text" placeholder="Email address or phone number" ><br>
+                <input type="password" placeholder="Password"><br>
+                <input type="submit" value="Log in">
+            </form>
+            <a href="#" id="forget">Forgotten password?</a>
+        <hr>
+            <button>Create new account</button>      
+        
+        </div>   
+        <p><a href="#">Create a Page</a> for a celebrity, brand or busines.</p>
+    </div>
+
+
+
+
+
+</body>
+</html>

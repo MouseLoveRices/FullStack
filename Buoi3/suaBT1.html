@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header{
+            background-image: url(img/bg_header.jpg);
+            background-size: cover; /*can chinh hinh anh vua trong khung*/
+            background-position: center;
+            height: 70vh;
+        }
+        .header .navbar{
+            display: flex;
+            align-items: center;
+            padding: 10px 30px;
+            width: 80%;
+            background-color: #cf372d;
+            margin: 0 auto;
+        }
+        .header .navbar .logo{
+            width: 50%;
+        }
+        .header .navbar .menu{
+            width: 50%;
+        }
+        .header .navbar .menu ul{
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .header .navbar .menu ul li a{
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            margin-left: 10px;
+        }
+        .header .navbar .logo img{
+            width: 200px;
+        }
+        .header .banner{
+            text-align: center;
+            color: white;
+            line-height: 60px;
+
+        }
+        .banner span{
+            color: orangered;
+        }
+        button{
+            background-color: orangered;
+            width: 9%;
+            height: 60px;
+            margin: 50px;
+            color: #fff;
+            font-weight: bold;
+        }
+        h1{
+            margin-top: 90px;
+            font-size: 60px;            
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+            <div class="navbar">
+                    <div class="logo">
+                        <img src="/img/logo.png" alt="">
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <!-- li*6>a -->
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Products</a></li>
+                            <li><a href="">Prices</a></li>
+                            <li><a href="">Contact</a></li>
+                            <li><a href="">About us</a></li>
+                            <li><a href="">Shop</a></li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="banner">
+                <h1>POWER OF <span>HTML CSS.</span></h1>
+                <p>language can create a lot of beauty on the website</p>
+                <button>learn more</button>
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .navbar ul{
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+        }
+        a{
+            text-decoration: none;
+        }
+        .navbar ul li a{
+            margin-right: 10px;
+            color: black;
+            text-transform: uppercase;
+        }
+        .navbar .menu1 li{
+            padding: 10px;
+            position: relative;
+        }
+        .navbar .menu1 li:hover{
+            background: aqua;
+        }
+        .navbar .menu2{
+            position: absolute;
+            top: 100%;
+            left: 0%;
+            display: none;
+        }
+        .navbar .menu1 li:hover .menu2{
+            display: block;
+        }
+        .navbar .menu3{
+            position: absolute;
+            top: 0;
+            left: 100%;
+            display:  none;
+        }
+        .navbar .menu2 li:hover .menu3{ /*khi the li cua menu 2 hover thi menu 3 se...*/
+            display: block;
+        }
+        a{ 
+            white-space: nowrap;
+        }
+        .menu2 li a:before{
+            content: '';
+            width: 90%;
+            height: 2px;
+            background-color: aqua;
+            position: absolute;
+            top: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul class="menu1">
+            <li><a href="">Home</a>
+                <ul class="menu2">
+                <li><a href="">Home</a></li>
+                <li><a href="">Product</a>
+                    <ul class="menu3">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Product</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Shop</a></li>
+                        </ul></li>
+                <li><a href="">About us</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Shop</a></li>
+                </ul>
+            </li>
+            <li><a href="">Product</a>
+                <ul class="menu2">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Product</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Shop</a></li>
+                    </ul>
+            </li>
+            <li><a href="">Contact</a>
+                <ul class="menu2">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Product</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Shop
+                        <ul class="menu3">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Product</a></li>
+                            <li><a href="">About us</a></li>
+                            <li><a href="">Contact</a></li>
+                            <li><a href="">Shop</a></li>
+                            </ul></li>
+                    </a></li>
+                    </ul>
+            </li>
+            <li><a href="">Shop</a>
+                <ul class="menu2">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Product</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Shop</a></li>
+                    </ul>
+            </li>
+            <li><a href="">Hello</a>
+                <ul class="menu2">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Product</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Shop</a></li>
+                    </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

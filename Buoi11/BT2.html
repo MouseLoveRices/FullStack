@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        body{
+            background: orange;
+        }
+        .contain{
+            width: 1000px;
+            height: 600px;
+            background: #fff;
+        }
+        .contain .row{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .contain .row .box{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;            
+        }
+        .contain .row .box i{
+            font-size: 35px;
+        }
+        .contain .row .tab{
+            width: 1000px;
+            height: 500px;
+            padding: 20px 150px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .contain .row .box.active{
+            background: aqua;
+        }
+        .contain .row .tab i{
+            font-size: 150px;
+            margin-right: 20px;
+        }
+        .contain .row .tab a{
+            text-decoration: none;
+        }
+        .contain .row .tab.active{
+            display: flex;
+            background: aqua;
+        }  
+        .forScroll{
+            height: 150vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div class="row">
+            <div class="box active">
+                <a id="clickMe1" onclick="show1()" onclick="show1()"><i class="fa-solid fa-flask-vial icon"></i><p>Research</p></a>
+            </div>
+            <div class="box">
+                <a id="clickMe2" onclick="show2()"><i class="fa-solid fa-people-arrows icon"></i><p>Planning</p></a>
+            </div>
+            <div class="box">
+                <a id="clickMe3" onclick="show3()"><i class="fa-solid fa-mobile-screen icon"></i><p>Production</p></a>
+            </div>
+            <div class="box">
+                <a id="clickMe4" onclick="show4()"><i class="fa-regular fa-comments icon"></i><p>Testing</p></a>
+            </div>
+            <div class="box">
+                <a id="clickMe5" onclick="show5()"><i class="fa-solid fa-magnifying-glass icon"></i><p>Result</p></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="tab active">
+                <div>
+                    <p><i class="fa-solid fa-flask-vial icon"></i></p> 
+                 </div>   
+                 <div>        
+                     <h1>Research</h1> 
+                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel dignissimos sunt quos aliquam, officiis sapiente obcaecati neque voluptatem ipsa nobis, reprehenderit facere cumque! Mollitia, rerum quasi. Eum nam incidunt tenetur.</p>
+                     <a href="">Details</a>
+                 </div> 
+            </div>
+            <div class="tab">
+                <div>
+                    <p><i class="fa-solid fa-people-arrows icon"></i></p> 
+                 </div>   
+                 <div>        
+                     <h1>Planning</h1> 
+                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel dignissimos sunt quos aliquam, officiis sapiente obcaecati neque voluptatem ipsa nobis, reprehenderit facere cumque! Mollitia, rerum quasi. Eum nam incidunt tenetur.</p>
+                     <a href="">Details</a>
+                 </div> 
+            </div>
+            <div class="tab">
+                <div>
+                    <p><i class="fa-solid fa-mobile-screen icon"></i></p> 
+                 </div>   
+                 <div>        
+                     <h1>Production</h1> 
+                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel dignissimos sunt quos aliquam, officiis sapiente obcaecati neque voluptatem ipsa nobis, reprehenderit facere cumque! Mollitia, rerum quasi. Eum nam incidunt tenetur.</p>
+                     <a href="">Details</a>
+                 </div> 
+            </div>
+            <div class="tab">
+                <div>
+                    <p><i class="fa-regular fa-comments icon"></i></p> 
+                 </div>   
+                 <div>        
+                     <h1>Testing</h1> 
+                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel dignissimos sunt quos aliquam, officiis sapiente obcaecati neque voluptatem ipsa nobis, reprehenderit facere cumque! Mollitia, rerum quasi. Eum nam incidunt tenetur.</p>
+                     <a href="">Details</a>
+                 </div> 
+            </div>
+            <div class="tab">
+                <div>
+                    <p><i class="fa-solid fa-magnifying-glass icon"></i></p> 
+                 </div>   
+                 <div>        
+                     <h1>Result</h1> 
+                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel dignissimos sunt quos aliquam, officiis sapiente obcaecati neque voluptatem ipsa nobis, reprehenderit facere cumque! Mollitia, rerum quasi. Eum nam incidunt tenetur.</p>
+                     <a href="">Details</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="forScroll"></div>
+    <button class="scroll" onclick="scrollToTop()">Scroll to top</button>
+    <script>
+        let boxs =document.querySelectorAll(".box")
+        let tabs = document.querySelectorAll(".tab")
+        let btn = document.querySelector(".scroll")
+        for(let i =0; i < boxs.length; i++){
+            boxs[i].addEventListener("mouseover", function(){
+                handle_active(i)
+            })
+        }
+        function handle_active(index){
+            for(let i =0; i < boxs.length; i++){
+                tabs[i].classList.remove("active")
+                boxs[i].classList.remove("active")
+            }
+            tabs[index].classList.add("active")
+            boxs[index].classList.add("active")
+        }
+        
+        function scrollToTop(){
+            window.scrollTo({top:0, behavior:'smooth'})
+        }
+    </script>
+</body>
+</html>

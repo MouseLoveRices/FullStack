@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            overflow: hidden;
+            font-family:'Courier New', Courier, monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            padding: 10px 50px;
+            background: linear-gradient(180deg, green, rgb(0, 255, 179));
+        }
+        .contain {
+            background: linear-gradient(30deg, aqua, rgb(165, 106, 165), orange);
+            border: 1px solid black;
+            box-shadow: rgba(14, 30, 37, 0.92) 2px 2px 14px 5px, rgba(14, 30, 37, 0.32) 10px 5px 16px 0px;
+            border-radius: 6px;
+            width: 300px;
+            height: 430px;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: Go 15s linear infinite alternate;
+        }
+        @keyframes Go {
+            25%{
+                transform: translate(1400px, 0px);
+            }
+            50%{
+                transform: translate(1400px, 500px);
+            }
+            75%{
+                transform: translate(0px, 500px);
+            }
+        }
+
+        .contain #res {
+            height: 35px;
+            width: 250px;
+            margin-bottom: 5px;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+        }
+
+        .contain h1 {
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        .contain table input {
+            width: 60px;
+            height: 60px;
+            background-color: #3a3a3a;
+            border-radius: 6px;
+            font-size: 25px;
+            color: #dff;
+        }
+
+        .contain table input[value="0"] {
+            width: 120px;
+        }
+
+        .contain table input[value="="] {
+            height: 120px;
+        }
+        .contain table .delete,
+        .contain table .deleteOne{
+            background-color: rgb(177, 71, 71);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contain">
+        <table>
+            <h1>Electronic Calculator</h1>
+            <input type="text" id="res">
+            <tr>
+                <td><input class="delete" type="button" value="C" ></td>            
+                <td><input class="deleteOne" type="button" value="<"></td>                     
+                <td><input class="btn1" type="button" value="/"></td>
+                <td><input class="btn1" type="button" value="X"></td>
+            </tr>
+            <tr>
+                <td><input class="btn1" type="button" value="7"></td>
+                <td><input class="btn1" type="button" value="8"></td>
+                <td><input class="btn1" type="button" value="9"></td>
+                <td><input class="btn1" type="button" value="-"></td>
+            </tr>
+            <tr>
+                <td><input class="btn1" type="button" value="4"></td>
+                <td><input class="btn1" type="button" value="5"></td>
+                <td><input class="btn1" type="button" value="6"></td>
+                <td><input class="btn1" type="button" value="+"></td>
+            </tr>
+            <tr>
+                <td><input class="btn1" type="button" value="1"></td>
+                <td><input class="btn1" type="button" value="2"></td>
+                <td><input class="btn1" type="button" value="3"></td>
+                <td rowspan="2"><input class="equal" type="button" value="="></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input class="btn1" type="button" value="0"></td>
+                <td><input class="btn1" type="button" value="."></td>
+            </tr>
+        </table>
+
+    </div>
+    <script>
+        let res = document.querySelector("#res")
+
+        //add value
+        let btns = document.querySelectorAll(".btn1")
+        let arr = ['/', '*', '7', '8', '9', '-', '4', '5', '6', '+', '1', '2', '3', '0', '.']
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function (event) {
+                add(arr[i])
+            })
+        }
+        function add(value) {
+            res.value += value
+        }
+
+        // c: delete
+        let delt = document.querySelector(".delete")
+        delt.addEventListener("click", function deleteAll(){
+            res.value = ''
+        })
+        
+        //delete by one <
+        let deltOne = document.querySelector(".deleteOne")
+        deltOne.addEventListener("click", function deleteOneByOne() {
+            let text = document.getElementById("res").value
+            var field = document.getElementById('res');
+            field.value = field.value.slice(0, -1); //Extract from index 0 to the before-last character
+            text.pop(); //Remove the last element from the input. It's length is maintained by js itself.
+            return false;
+        })
+
+        // for = btn
+        let equal = document.querySelector(".equal")
+        equal.addEventListener("click", function calc() {
+            let a = res.value
+            res.value = eval(a)
+        })
+        
+
+
+
+    </script>
+</body>
+
+</html>

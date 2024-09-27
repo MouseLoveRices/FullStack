@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits = new Map([
+            {name:"lemon", age:10},
+            {name:"Apple", age:12},
+            {name:"Grape", age:13},
+            {name:"Kokomi", age:14},
+            {name:"lemonGreen", age:15},
+        ])
+        
+        let obj1 = {name:"Meo", age:5}
+        const arr1 = [1,2,3]
+        const arr2 =[4,5,6]
+        const arr3 =[arr1,arr2]
+        const arr4 =[...arr1,...arr2,{...obj1}]
+        console.log(arr4)
+        const arr5={...fruits}
+        console.log(arr5)
+        let sum = 0;
+        arr2.map(item=>{
+            sum+=item;
+        })
+        console.log(sum)
+        console.log(arr2.reduce((item,sum)=>sum+item,0))
+        console.log(arr2.filter(item=>item>4))
+        console.log(fruits.filter(item=>item.age>6))
+        obj1 = {...obj1,id:2,name:"Lemon"} // sau khi phan ra obj1, thay the name trong obj1 bang name dung sau cung
+        console.log(obj1)
+    </script>
+</body>
+</html>

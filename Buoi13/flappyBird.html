@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="900" height="500" style="background: aqua;"></canvas>
+    <h1 id="res">Total Score: </h1>
+
+    <script>
+        let total=0;
+        let bg = new Image();
+        bg.src = "img/bg.png"
+
+        let bird = new Image()
+        bird.src = "img/bird.png"
+
+        let chimney1 = new Image()
+        chimney1.src = "img/chimney1.png"
+
+        let chimney2 = new Image()
+        chimney2.src = "img/chimney2.png"
+
+        let c = document.getElementById("canvas")
+        let ctx = c.getContext("2d")
+        
+        let point_bird = {
+            x: c.width / 5,
+            y: c.height / 2
+        }
+
+        let arr =[];
+        arr[0] = {
+            x:c.width,
+            y:c.height-190
+        }
+        
+        function run(){
+            point_bird.y+=1;
+            ctx.drawImage(bg, 0, 0, c.width, c.height)
+            ctx.drawImage(bird, point_bird.x, point_bird.y, 90, 90)
+            let meo = requestAnimationFrame(run)     
+            for(let i= 0; i<arr.length; i++){
+                arr[i].x-=2;
+                
+                ctx.drawImage(chimney1, arr[i].x, 0, 20,  190)
+                ctx.drawImage(chimney2, arr[i].x, arr[i].y, 20, 190)
+
+                if(arr[i].x == c.width / 2){
+                    arr = [...arr, { x:c.width, y:c.height-190}]
+                }
+                if(arr[i].x == -10){
+                    arr.slice(0,1);
+                }
+                if(arr[i].x == point_bird.x){
+                    total+=10;
+                    res.innerHTML="Total Score:" +total
+                }
+               
+                if(point_bird.y==0|| point_bird.y == c.height-30){
+                    cancelAnimationFrame(meo)
+                    // clearInterval(meo)
+                    console.log(point_bird)
+                    console.log(arr[i])
+                }
+            }
+        
+
+        }
+        
+        window.addEventListener("keydown",(e)=>{
+            point_bird.y-=20
+        })
+        run()
+        // let meo = setInterval(run, 10)
+    </script>
+</body>
+</html>

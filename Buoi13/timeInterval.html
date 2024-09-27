@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(223, 180, 180);
+        }
+        #res2{
+            width: 200px;
+            height: 200px;
+            background: aqua;
+            transform: 1s;
+        }
+        #res3{
+            width: 150px;
+            height: 50px;
+            background-color: aqua;
+            display: flex;
+            position: absolute;
+            z-index: 10;
+            backdrop-filter: blur(50px);
+        }
+        #res3::before{
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(to bottom, yellow, orange);
+            position: absolute;
+            top: -25%;
+            left: -9%;
+            animation: play 2s linear infinite alternate;
+        }
+        #res3::after{
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(to top, rgb(0, 209, 216), rgb(236, 82, 241));
+            position: absolute;
+            top: -25%;
+            left: 90%;
+            animation: play 2s linear 2s infinite alternate;
+        }
+        @keyframes play {
+            100%{
+                transform: translateY(100%);
+            }
+        }
+        #hours, #minutes, #seconds{
+            width: 50px;
+            height: 50px;
+            font-size: 35px;
+            text-align: center;
+        }
+        #contain{
+            background: rgb(161, 159, 185);
+            width: 200px;
+            height: 130px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        #contain p{
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="clearInterval(test1)">Clear</button>
+    <button onclick="setTimeout(testing2,2000)">Time out</button>
+    <h1 id="res"></h1>
+    <h1 id="res2">saddassa</h1>
+    <div id="contain">
+       <p id="resYMD"> 
+        <a id="resYear"></a>
+        <a id="resMonth"></a>
+        <a id="resDay"></a>
+        </p>
+        
+    <div id="res3">
+        <span id="hours"></span>
+        <span id="minutes"></span>
+        <span id="seconds"></span>
+    </div>
+    </div>
+    <div id="sliders">
+        <button onclick="handleSlider(false)">Pre</button>
+        <button onclick="handleSlider(true)">Next</button>
+        <img src="product_1.jpg"  id="slider_img" width="200px">
+    </div>
+    <script>
+        let i =0
+
+        function showTime(){
+            let d = new Date();
+            let month = d.getMonth();
+            let year = d.getFullYear()
+            let day = d.getDay();
+            let h = d.getHours()
+            let m = d.getMinutes()
+            let s = d.getSeconds()
+            // resYear.innerHTML = year+' -'
+            // resMonth.innerHTML = month+' -'
+            // resDay.innerHTML = day
+            hours.innerHTML = h +':'
+            minutes.innerHTML = m +':'
+            seconds.innerHTML = s
+        }
+        setInterval(showTime,1000)
+        function testing1(){
+            res.innerHTML=i++
+        }
+        function testing2(){
+            //res2.innerHTML+="Stringasdasd"
+            res2.style.background="#fdcb6e"
+        }
+        let test1 =setInterval(testing1, 1000)
+        // setTimeout(testing2,2000)
+        let imgs = ['product_1.jpg','product_2.jpg','product_3.jpg','product_4.jpg']
+        function handleSlider(flag){
+            if(flag == true){
+                i++;
+                if(i>=imgs.length){
+                    i=0;
+                }
+            }else{
+                i--;
+                if(i<0){
+                    i=imgs.length-1;
+                }
+            }
+            slider_img.src=`${imgs[i]}`
+        }
+        setInterval(()=>{handleSlider(true)},1000)
+    </script>
+</body>
+</html>

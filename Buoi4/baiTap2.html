@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 90vw;
+            height: 90vh;
+            background-color: blue;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .container #up{
+            width: 3%;
+            height: 5%;
+        }
+        .head{
+            width: 100%;
+            height: 47%;
+            background-color: aqua;
+        }
+        .foot{
+            width: 100%;
+            height: 47%;
+            background-color: greenyellow;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .foot .logo img{
+            width: 100%;
+            height: 50%;
+        }
+        .foot .gallery{
+            display: flex;
+            flex-direction: row;
+        }
+        .foot .gallery .image{
+            width: 60%;
+            height: 60%;
+            display: block;
+            background-color: red;
+        }
+        .foot .gallery img{
+            width: 10%;
+            height: 10%;
+        }
+        .right{
+            width: 100%;
+            height: 3%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <img src="/img2/mail.png" class="logo">
+            <p>If you have any questions. Subcribes to our newsletter to receive our latest products and latest news.</p>
+            <form>
+                <input type="text" name="" id="" placeholder="Your Name">
+                <input type="email" name="" id="" placeholder="Your Email">
+                <button>Subcribes Now</button>
+            </form>
+        </div>
+        <div class="foot">
+            <div class="logo">
+                <img src="/img2/logo_4.png" alt="">
+                <p>Industo is a creato of zero emission energy solutions. Our versatile services help bring succes to companies in the industry.</p>
+                <button>About us</button>
+            </div>
+            <div class="link">
+                <h1>Quick Link</h1>
+                <p>> Services</p>
+                <p>> Porfolio</p>
+                <p>> FAQ</p>
+                <p>> Contact</p>
+                </div>
+            <div class="info">
+                <h1>Official info</h1>
+                <p><a><i class="fa-solid fa-location-dot"></i> 30 commercial Road Fratton, Australia</a></p>
+                <p><a><i class="fa-solid fa-phone" id="icon"></i></a> 1-888-452-1505</p>
+                <h2>Open Hours:</h2>
+                <p><a>Mon-Sat: 8am-5pm,</a> Sunday: CLOSED</p>
+            </div>
+            <div class="gallery">
+                <h1>Gallery</h1>
+                <div class="image">
+                    <div><img src="/img2/gl_1.jpg" alt=""></div>
+                    <div><img src="/img2/gl_2.jpg" alt=""></div>
+                    <div><img src="/img2/gl_3.jpg" alt=""></div>
+                    <div><img src="/img2/gl_4.jpg" alt=""></div>
+                    <div><img src="/img2/gl_5.jpg" alt=""></div>
+                    <div><img src="/img2/gl_6.jpg" alt=""></div>                                                                                                      
+                </div>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-solid fa-basketball"></i>
+                    <i class="fa-brands fa-behance"></i>
+                </div>
+            </div>
+        </div>  
+        <button id="up">Up</button>
+        <div class="right">
+        <p>2022 Industo<span>-CaseThemes-</span>All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

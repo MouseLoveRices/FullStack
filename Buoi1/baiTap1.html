@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+    <style>
+        .container{
+            position: absolute;
+            top: 20%;
+            left: 40%;
+            border-right: solid rgb(214, 214, 214);
+            border-left: solid rgb(214, 214, 214);
+            border-bottom: solid rgb(214, 214, 214);
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            height: 270px;
+            width: 360px;
+            border-radius: 5px;            
+        }
+        input{
+            margin-top: 8px;
+            width: 90%;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 5px;       
+            padding-left: 15px;
+            border: hidden; 
+        }
+        input:focus {
+            outline-style: auto;
+            outline-color: rgb(5, 162, 253);
+        }
+        .login{
+            background-color: rgb(1, 137, 248);
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            height: 35px;
+            width: 320px;
+            text-align: center;
+            color:azure;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        a{
+            margin-top: 8px;
+            margin-left: 110px; 
+            text-decoration: none;       
+        }
+        .create{
+            margin-top: 25px;
+            margin-left: 100px;
+            padding: 20px 20px  ;
+            background-color: rgb(66, 226, 66);
+            border: none;
+            border-radius: 5px;
+            color: azure;
+            font-weight: bold;
+        }
+        .crte{
+            margin-top: 15px;
+            border-top: 1px solid rgb(218, 212, 212);
+        }
+    </style>
+</head>   
+<body>
+    <div class="container">
+        <form >
+            <input type="text" placeholder="Email address or phone number"> <br>
+            <input type="password" placeholder="Password"> <br>
+            <button class="login">Log in</button> <br>
+            <a href="#">Forgotten password?</a><br>
+            <div class="crte">
+            <button class="create">Create new account</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

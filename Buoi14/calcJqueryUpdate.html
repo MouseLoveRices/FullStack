@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="a"> <br>
+        <input type="text" id="b"> <br>
+    </form>
+    <h1 id="res"></h1>
+    <button id="btn1" class="btn">+</button>
+    <button id="btn2" class="btn">-</button>
+    <button id="btn3" class="btn">*</button>
+    <button id="btn4" class="btn">/</button>
+    <button id="btn5" class="btn">Clear</button>
+    <script>
+
+        $(document).ready(function(){
+            let value_a = $("#a")
+            let value_b = $("#b")
+            let res = $("#res")
+
+            $(".btn").each(function(){
+            
+            $(this).click(function(){
+                if($(this).text()=="+"){
+                    res.text(value_a.val()*1+value_b.val()*1)
+                }else if($(this).text()=="-"){
+                    res.text(value_a.val() * 1 - value_b.val() * 1)
+                }else if($(this).text()=="*"){
+                    res.text(value_a.val()*1 * value_b.val()*1)
+                }else if($(this).text()=="/"){
+                    res.text(value_a.val()*1 / value_b.val()*1)
+                }else if($(this).text()=="Clear"){
+                    value_a.val("")
+                    value_b.val("")
+                    res.text("")
+                }
+            })
+        })
+        })
+        
+
+        
+    </script>
+
+</body>
+
+</html>

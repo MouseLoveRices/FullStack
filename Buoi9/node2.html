@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const para = document.createElement("p");
+        const node = document.createTextNode("This is new.");
+        para.appendChild(node);
+        
+        const element = document.getElementById("div1");
+        const child = document.getElementById("p1");
+        element.insertBefore(para, child);
+
+        // const elmnt = document.getElementById("p1"); elmnt.remove(); // remove element
+        </script>
+
+</body>
+</html>

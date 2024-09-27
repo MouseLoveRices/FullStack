@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: orange;
+        }
+        .contain{
+            width: 1000px;
+            height: 600px;
+            background: #fff;
+            text-align: center;
+        }
+        .contain .row{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .contain .row .box{
+            width: 100px;
+            height: 100px;
+        }
+        .contain .row .tab{
+            width: 1000px;
+            height: 500px;
+            display: none;
+        }
+        .contain .row .box.active{
+            background: aqua;
+        }
+        .contain .row .tab.active{
+            display: flex;
+            background: greenyellow;
+        }  
+        .forScroll{
+            height: 150vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div class="row">
+            <div class="box active">Box1</div>
+            <div class="box">Box2</div>
+            <div class="box">Box3</div>
+            <div class="box">Box4</div>
+            <div class="box">Box5</div>
+        </div>
+        <div class="row">
+            <div class="tab active">Tab1</div>
+            <div class="tab">Tab2</div>
+            <div class="tab">Tab3</div>
+            <div class="tab">Tab4</div>
+            <div class="tab">Tab5</div>
+        </div>
+    </div>
+    <div class="forScroll"></div>
+    <button class="scroll" onclick="scrollToTop()">Scroll to top</button>
+    <script>
+        let boxs =document.querySelectorAll(".box")
+        let tabs = document.querySelectorAll(".tab")
+        let btn = document.querySelector(".scroll")
+        for(let i =0; i < boxs.length; i++){
+            boxs[i].addEventListener("mouseover", function(){
+                handle_active(i)
+            })
+        }
+        function handle_active(index){
+            for(let i =0; i < boxs.length; i++){
+                tabs[i].classList.remove("active")
+                boxs[i].classList.remove("active")
+            }
+            tabs[index].classList.add("active")
+            boxs[index].classList.add("active")
+        }
+        
+        function scrollToTop(){
+            window.scrollTo({top:0, behavior:'smooth'})
+        }
+    </script>
+</body>
+</html>

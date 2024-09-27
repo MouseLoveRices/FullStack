@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 1</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background: orange;
+        }
+        .construct{
+            width: 1000px;
+            height: 600px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .construct .radioBtn{
+            width: 20%;
+            height: 16%;
+            margin-bottom: 10px;
+            display: flex;
+            text-align: center;
+        }
+        .construct .radioBtn .tai,
+        .construct .radioBtn .xiu{
+            width: 50%;
+            height: 100%;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+        }
+        .contain{
+            width: 450px;
+            height: 150px;
+            flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+            background: aqua;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            background: aqua;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 130px;
+        }
+        .construct .resValue{
+            background: greenyellow;
+            display: flex;
+            margin-top: 10px;
+        }
+        .construct .crt{
+            position: absolute;
+            top: 95%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="construct">
+        <h1>Game</h1>
+        <h2>You have <a id="money"></a>$</h2>
+        <div class="radioBtn">
+            <div class="tai">
+                <h2>Tai</h2>
+                <input type="radio" name="game" value="tai" id="taiValue">
+            </div>
+            <div class="xiu">
+                <h2>Xiu</h2>
+                <input type="radio" name="game" value="xiu" id="xiuValue">
+            </div>         
+        </div>
+        <div class="contain" id="container">
+            <div class="dice">
+                <ol class="die-list even-roll" data-roll="1" id="die-1">
+                  <li class="die-item" data-side="1">
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="2">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="3">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="4">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="5">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="6">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                </ol>
+                 <ol class="die-list odd-roll" data-roll="1" id="die-2">
+                  <li class="die-item" data-side="1">
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="2">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="3">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="4">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="5">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="6">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                </ol>
+                <ol class="die-list odd-roll" data-roll="1" id="die-3">
+                  <li class="die-item" data-side="1">
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="2">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="3">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="4">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="5">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="6">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                </ol>
+              </div>
+        </div>
+        <div class="resValue">
+            <p >Tong gia tri la: <a class="res"></a></p>
+        </div>
+        <button class="crt">Create</button>
+    </div>
+    <script>
+        let btn = document.querySelector(".crt")
+        let contain = document.querySelectorAll(".contain")
+        let res = document.querySelectorAll(".res")
+        let money = document.querySelectorAll("#money")
+        
+        btn.addEventListener("click", createBox)
+
+        let atag = document.createElement("a")
+            atag.innerHTML = 500
+            let total = Number(atag.innerHTML)
+            money[0].appendChild(atag)
+        
+        function createBox() {
+            const box1 = document.createElement("div");
+            box1.innerHTML = randomValue();
+            let a = Number(box1.innerHTML)
+            box1.className = "box";
+            contain[0].innerHTML =""
+            contain[0].appendChild(box1);
+
+            const box2 = document.createElement("div");
+            box2.innerHTML = randomValue();
+            let b = Number(box2.innerHTML)
+            box2.className = "box";
+            contain[0].appendChild(box2);
+
+            const box3 = document.createElement("div");
+            box3.innerHTML = randomValue();
+            let c = Number(box3.innerHTML)
+            box3.className = "box";
+            contain[0].appendChild(box3);
+
+            let x = a + b + c ;
+
+            const aRes = document.createElement("a")
+            aRes.innerHTML= x
+            res[0].innerHTML =""
+            res[0].appendChild(aRes)
+            
+            if(x<10){
+                total = total -10
+                atag.innerHTML = total
+                money[0].appendChild(atag)
+            }else{
+                total = total +10
+                atag.innerHTML = total
+                money[0].appendChild(atag)
+            }
+        }
+        function randomValue(){
+            let x = Math.floor((Math.random() * 6) + 1);
+            return x;
+        }
+
+        function rollDice() {
+    const dice = [...document.querySelectorAll(".die-list")];
+    dice.forEach(die => {
+        toggleClasses(die);
+        die.dataset.roll = getRandomNumber(1, 6);
+        // die.dataset.roll = 1;
+  });
+}
+function toggleClasses(die) {
+  die.classList.toggle("odd-roll");
+  die.classList.toggle("even-roll");
+}
+function getRandomNumber(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+document.getElementById("crt").addEventListener("click", rollDice);
+        //https://docs.google.com/presentation/d/1JEjVYjSyDmK40_DUykJNSrtxw9UyF515/edit#slide=id.p50
+    </script>
+</body>
+
+</html>

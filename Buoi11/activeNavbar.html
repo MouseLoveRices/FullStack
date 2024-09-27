@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contain{
+            height: 150vh;
+        }
+        .menu{
+            height: 200px;
+            padding: 10px;
+            background: aqua;
+        }
+        .menu .sideBar{
+            display: flex;
+        }
+        .menu .sideBar.active{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+        .menu .sideBar .left{
+            width: 30%;
+            height: 100vh;
+            background-color: orangered;
+            transform: translateX(-120%);
+            transition: 1s;
+            overflow-y: scroll; /*them thanh cuon khi co nhieu noi dun*/
+        }
+        .menu .sideBar .right{
+            width: 70%;
+            height: 100vh;
+            background: black;
+            opacity: 0.2;
+            transform: translateY(-120%);
+            transition: 1s;
+        }
+        .menu .sideBar.active .left{
+            transform: translateX(0%);
+        }
+        .menu .sideBar.active .right{
+            transform: translateY(0%);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <button onclick="handle_toggle()">Toggle</button>
+        <div class="sideBar">
+            <div class="left">
+                <button onclick="handle_toggle()">X</button>
+                left
+            </div>
+            <div class="right" onclick="handle_toggle()">
+                right
+            </div>
+        </div>
+    </div>
+
+    <div class="contain">
+        contain
+    </div>
+
+    <div class="contain">
+        contain
+    </div>
+    <script>
+        let sideBar = document.querySelector(".sideBar")
+        function handle_toggle(){
+            sideBar.classList.toggle("active")
+        }
+    </script>
+</body>
+</html>

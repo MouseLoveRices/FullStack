@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            margin-top: 10px;
+        }
+        button{
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container bg-primary text-danger text-center p-3">
+        Container
+    </div>
+    <div class="container-fluid bg-success text-center">
+        Fluid
+    </div>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+        <div class="container-fluid">
+          <a class="navbar-brand " href="#">Logo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">  <!--chu y id cua the collapse  -->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
+            <ul class="navbar-nav ms-auto">
+                <!--me: trai, ms: phai -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="table">
+        <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="card" style="width:400px">
+        <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">John Doe</h4>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, repudiandae, ut veritatis a nostrum autem eaque rerum aperiam illum nulla impedit fugit vitae. At odit inventore quae explicabo sed eveniet.</p>
+          <a href="#" class="btn btn-primary">See Profile</a>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" data-bs-target="#myModal">
+        Open modal
+      </button>
+      <!-- data-bs-toggle="modal" data-bs-target="#myModal" #myModal la id cua the div modal -->
+       <!-- data-bs-toggle="modal" data-bs-target="#myModal" hai item nay la bat buoc khi su dung <div class="modal" id="myModal"> -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button> 
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="/action_page.php">
+                    <div class="mb-3 mt-3">
+                      <label for="email" class="form-label">Email:</label>
+                      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    </div>
+                    <div class="mb-3">
+                      <label for="pwd" class="form-label">Password:</label>
+                      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                    </div>
+                    <div class="form-check mb-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success" data-bs-dismiss="modal">Ok</button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="row">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 border borde-primary">Box</div> <!-- Gom 3 cot trong page thanh 1 o  -->
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 border borde-primary">Box</div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 border borde-primary">Box</div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 border borde-primary">Box</div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 border borde-primary">Box</div> 
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 border borde-primary">Box</div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 border borde-primary">Box</div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 border borde-primary">Box</div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 border borde-primarys">Box</div> <!-- gom 6 cot -->
+        </div>
+      </div>
+</body>
+</html>

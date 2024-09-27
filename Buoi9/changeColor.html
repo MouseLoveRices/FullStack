@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="btn">color 1</button>
+    <button class="btn">color 2</button>
+    <button class="btn">color 3</button>
+    <button class="btn">color 4</button>
+    
+    <script>
+        color = ['#2980b9','#e74c3c','#16a085','#f1c40f']
+        let btns = document.getElementsByClassName("btn")
+        for( let i=0;i<btns.length;i++){
+            btns[i].addEventListener("click", function(){
+                changeBg(color[i])
+            })
+        }
+        function changeBg(color){
+            document.body.style.background=color
+        }
+    </script>
+</body> 
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Box</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .contain{
+            border: 1px solid red;
+            width: 500px;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden; /*an cac pha ntu tran ra khoi contain*/ 
+        }
+        .contain .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid aqua;   
+            width: 25%;
+            transition: 1ms;
+            /* width: calc(25% - 2px); */
+            flex: 25%; /*khi cac o bi nhay xuong hang 2 thi tu chia deu trong khoang cua contain*/
+        }
+        .contain:hover .box{    /*hover contain thi cac phan tu ben trong no cung hover*/
+            background-color: rgb(72, 236, 66);
+        }
+        .contain:hover .box:first-child{ /*hover phan tu dau tien*/
+            background-color: brown;
+        }
+        .contain:hover .box:first-child ~.box:last-child{ /*hover phan tu dau tien va cuoi cung*/
+            background-color: brown;
+        }
+        .contain:hover .box:nth-child(3){ /*hover phan tu thu 3*/
+            background-color: cadetblue;
+        }
+        p:hover{
+            transition: 1ms;
+        }
+        p:hover{
+            background-color: aqua;
+            color: burlywood;
+            font-size: 20px;
+        }   
+        .square{
+            width: 150px;
+            height: 150px;
+            background-color: aqua;
+            transition: 100ms;
+        }
+        .square:hover{
+            transform: translate(10px, 5px); /*Phep tinh tien (x,y) toa do*/
+            transform: rotate(45deg); /*Phep xoay 45 do*/
+            transform:  translateX(10px) translateY(5px) rotate(45deg) scale(1.2); /*vua tinh tien, vua xoay, vua phong to*/
+        }  
+        i{
+            font-size: 60px; /*icon duoc xem nhu text nen su dung fon-size de tang kich thuoc*/
+        }   
+    </style>
+</head>
+<body>
+        <div class="square"></div>
+        <p>Hover me</p>
+        <div class="contain">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+        </div>        
+        <i class="fa-solid fa-heart"></i>  <!-- icon nay lay trong trang font-awesome, su dung thu vien trong trang cdn font awesome, thu vien dan trong head -->
+</body>
+</html>

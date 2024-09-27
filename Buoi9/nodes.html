@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #div1 button{
+        background-color: aqua;
+    }
+    #div1 button:hover{
+        background-color: aquamarine;
+    }
+</style>
+<body>
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+      </div>
+      
+      <script>
+      const para = document.createElement("button");
+      const node = document.createTextNode("This is new.");
+      para.appendChild(node);
+      
+      const element = document.getElementById("div1");
+      element.appendChild(para);
+      </script>  
+</body>
+</html>

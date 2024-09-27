@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: orangered;
+        }
+        .container{
+            background-color: #fff;
+            width: 300px;
+            height: 350px;
+            padding-top: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            border-radius: 4px;
+            position: absolute;
+            top: 20%;   
+            left: 40%;        
+        }
+        label{
+            font-size: 40px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+        .container input{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 100%;
+            height: 40px;
+            border: hidden;
+            outline-color: orangered;
+            padding: 8px;
+        }
+
+        #submit{
+            margin-top: 40px;
+            background-color: orangered;
+            height: 40px;
+            width: 120px;
+            border-radius: 50px;
+            font-weight: 1000;
+            color: #fff;
+            
+        }
+        #submit:hover{ 
+            background-color: rgb(240, 131, 92);
+        }
+        a{
+            text-decoration: none;
+            color: #a5a3a3;
+            position: absolute;
+            top: 30%;
+            left: 70px;
+        }
+        a:hover{
+            color: rgb(240, 131, 92); 
+        }
+    </style>
+</head>
+    <body>
+
+        <div class="container">
+            <label><b>Sign in</b></label>
+            <form>
+                <input type="text" placeholder="Email"> <br>    
+                <input type="password" placeholder="Password"> <br>                           
+                <input type="submit" value="SIGN IN" id="submit">
+            </form>
+                <a href="#">Forgot your password?</a> <br>
+        </div>
+
+
+
+
+    </body>
+</html>

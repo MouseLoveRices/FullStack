@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Ten dang nhap <span id="res"></span></p>
+    <p>So ne <span id="number"></span></p>
+    <script>
+        let user = "Le Meo";
+        localStorage.setItem("username", user)
+        if(localStorage.getItem("username")){
+            let info = localStorage.getItem("username")
+            res.innerHTML=info
+        }
+
+        let arr = [2,5,7,"r"]
+        localStorage.setItem("num", arr)
+        if(localStorage.getItem("num")){
+            let count = localStorage.getItem("num")
+            number.innerHTML=count
+        }
+
+        let obj=[{name:"Lemon", age:7},{name:"Apple", age:10}]
+        localStorage.setItem("obj",JSON.stringify(obj))
+        if(localStorage.getItem("obj")){
+            let obj1=JSON.parse(localStorage.getItem("obj"))
+            console.log(obj1)
+        }
+    </script>
+</body>
+</html>

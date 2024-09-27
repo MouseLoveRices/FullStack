@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [4, 6, 9, 2, 5, 7, 1, 8];
+        function merge(arr) {
+            if (arr.length <= 1) return arr;
+            let mid = Math.floor(arr.length / 2);
+            let left = merge(arr.slice(0, mid));
+            let right = merge(arr.slice(mid))
+            function mergeSort(arr1, arr2) {
+                let result = [];
+                let i = 0;
+                let j = 0;
+                for (; i < arr1.length && j < arr2.length;) {
+                    if (arr1[i] < arr2[j]) {
+                        result.push(arr1[i]);
+                        i++;
+                    } else {
+                        result.push(arr2[j]);
+                        j++;
+                    }
+                }
+                for (; i < arr1.length; i++) {
+                    result.push(arr1[i]);
+                }
+                for (; j < arr2.length; j++) {
+                    result.push(arr2[j]);
+                }
+                return result;
+                }   
+            return mergeSort(left, right)
+        }
+        console.log("arr:" ,arr)
+        console.log(merge(arr))
+
+
+    </script>
+</body>
+
+</html>

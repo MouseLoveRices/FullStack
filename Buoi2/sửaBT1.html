@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet">
+    <title>bài 1</title>
+    <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                background-image: linear-gradient( #eb3349, #f45c43);
+                height: 100vh;
+                font-family: "Anton SC", sans-serif;
+                font-weight: 300;
+                font-style: normal;
+            }
+            .contain{
+                width: 400px;
+                height: 500px;
+                background-color: #fff;
+                padding: 90px 40px;
+                text-align: center;
+                border-radius: 5px;
+                margin: 100px auto !important;
+            }
+            .contain h1{
+                margin-bottom: 15px;
+            }
+            .contain input[type='email'], .contain input[type='password']{
+                width: 100%;
+                padding: 15px 10px;
+                margin-bottom: 15px;
+                border: none;
+                outline: none;
+                background: rgb(235, 235, 235);
+            }
+            .contain input[type='submit']{
+                padding: 15px 50px;
+                background-color: rgb(255, 64, 47);
+                border: none;
+                border-radius: 50px;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: #fff;
+                outline: none;
+            }
+            .contain a{
+                text-decoration: none;
+                color: black;
+                opacity: 0.6;
+                margin-bottom: 15px;
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <h1>Sign in</h1>
+        <form>
+            <input type="email" placeholder="Email"> <br>
+            <input type="password"placeholder = "Password"> <br>
+            <a href="#">Forgot your password?</a> <br>
+            <input type="submit" value="Sign in" >
+        </form>
+    </div>
+</body>
+</html>

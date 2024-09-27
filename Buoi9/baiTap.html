@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contain">
+    </div>
+        <button onclick="create()">create</button>
+        <button onclick="remove()">remove</button>
+    <script>
+        let index =0;
+        let contain = document.getElementsByClassName("contain")
+        function create(){          
+            let h1 = document.createElement("h1")
+            h1.className="theH1"
+            h1.innerHTML="the h1"+index++;
+            contain[0].innerHTML=""          
+            contain[0].appendChild(h1)
+        }
+        function remove(){
+            let theH1 = document.getElementsByClassName("theH1")
+            theH1[0].remove()
+        }
+    </script>
+</body>
+</html>

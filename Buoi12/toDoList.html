@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vw;
+            height: auto;
+        }
+        .contain{
+            padding: 2px;
+            width: 50%;
+            height: auto;
+            background: blue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contain .tittle{
+            width: 98%;
+            height: 50px;
+            background: aquamarine;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 5px;
+        }
+        .contain input{
+            width: 70%;
+            height: 30px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .contain button{
+            width: 20%;
+            height: 34px;
+            border: none;
+            background: #fff;
+            border-radius: 5px;
+        }
+        .contain button:hover{
+            background: rgb(168, 168, 168);
+        }
+        .contain ul{
+            width: 100%;
+            height: auto;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: center;
+        }
+        .contain li{
+            padding-left: 10px;
+            margin-bottom: 5px;
+            width: 85%;
+            height: 30px;
+            background: orange;
+            border-radius: 2px;
+            display: flex;
+            justify-content: space-between;   
+            align-items: center;
+            text-align: center;
+        }
+        .contain .close{
+            font-size: 26px;
+            width: 30px;
+            background-color: yellowgreen;
+            border-radius: 2px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div class="tittle">
+            <h1>Game to play</h1>
+        </div>
+        <div class="add">
+            <input type="text" name="" id="nameGame" placeholder="Add a game">
+            <button class="addGame">Add</button>
+        </div>
+        <ul id="listGame">
+    
+        </ul>
+    </div>
+        <script>
+            let btn = document.querySelector(".addGame")
+            let input =document.querySelector("#nameGame")
+            let list = document.querySelector("#listGame");
+            let close = document.getElementsByClassName("close");
+            var myGamelist = document.getElementsByTagName("LI");
+            btn.addEventListener("click", addGame)
+
+            
+            for (let i = 0; i < myGamelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myGamelist[i].appendChild(span);
+            }
+            
+            for (let i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+            }
+            
+            list.addEventListener('click', function(ev) {
+            if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+            }
+            }, false);
+
+            function addGame(){
+                let lies = document.createElement("li")
+                inputValue = input.value
+                let t = document.createTextNode(inputValue)
+                lies.appendChild(t)
+                if(inputValue==''){
+                    alert('type a name game')
+                }else{
+                    document.getElementById("listGame").appendChild(lies)
+                }
+                input.value="";
+
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                lies.appendChild(span);
+
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function() {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                    }
+                }
+            }
+
+
+            let fruits = [
+                {id:1, name:"Apple", age:2},
+                {id:2, name:"Lemon", age:5},
+                {id:3, name:"Orange", age:8},
+            ]
+            function loadFruits(){
+                list.innerHTML=""
+                fruits.map(fruits=>{
+                    let li = document.createElement("li")
+                    li.innerHTML=fruits.name
+                    list.appendChild(li)
+                })
+            }
+        </script>
+</body>
+</html>

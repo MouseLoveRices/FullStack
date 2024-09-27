@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::before{
+            content: "always ";
+        }
+        p::after{
+            content: " 'bout you";
+        }
+        /*before after la con cua the p*/
+        .contain{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            position: absolute; /*vi tri hien thi tren cung so voi cac phan tu khac*/
+            top: 50%;
+            left: 50%; /*vi tri nay la vi tri goc tren cung ben trai cua hinh*/
+            transform: translate(-50%, -50%); /*dich chuyen tam cua hinh ve giua*/
+        }
+        .meo{
+            width: 300px;
+            height: 300px;
+            background-color: greenyellow;
+            position: relative; /*co the dung absolute de cac phan tu con dich chuyen toa do*/          
+        }
+        .ga{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute; /*dung tuyet doi de so voi tuong doi trong div cha la meo de thay doi toa do*/
+            bottom: 0;
+            right: 0;
+            z-index: 3;
+        }
+        .cho{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute; /*dung tuyet doi de so voi tuong doi trong div cha la meo de thay doi toa do*/
+            bottom: 0;
+            right: 10%;
+            z-index: 2;
+        }
+        /*cac phan tu nam sau thi noi len tren, vi cho nam sau ga nen cho noi len nhung su dung z-index thi ga se noi len tren cho*/
+        /*z-index chi can so cua phan tu can noi len lon hon so cua phan tu nam duoi*/
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: chartreuse;
+            position: absolute;
+            /*top: 100%; /*top 100% la dinh cua hinh se o vij tri 100% so voi phan tu cha*/
+            bottom: 0%;
+        }
+        span{
+            position: relative;
+            font-size: 40px;
+        }
+        span:before{
+            content: '';
+            position: absolute;
+            background-color: aqua;
+            width: 100%;
+            height: 2px;
+            top: 100%;/*dieu chinh vi tri cho gach chan*/
+            left: 0%;
+        }/*gach chan cho chu Home trong the span*/
+        ul{
+            text-decoration: none;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            font-size: 20px;
+        }
+        ul li a{
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        ul li a:before{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background-color: skyblue;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transition: 500ms;
+        }
+        ul li a:hover::before{/*hover cho the a thi before cung hover theo*/
+            width: 100%;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="list">
+        <ul>
+            <li><a href="">home</a></li>
+            <li><a href="">product</a></li>
+            <li><a href="">about us</a></li>
+            <li><a href="">contact</a></li>
+            <li><a href="">shop</a></li>
+        </ul>
+    </div>
+    <span>Home</span>
+    <p><i> think </i></p>  
+    <p>Lorem pisicing elit. Voluptatum ullam a excepturi vitae ut maxime obcaecati aliquam laborum dolorum reiciendis magnam nesciunt, sunt quia veniam voluptatibus error, ea, harum iste.
+    </p>
+    <div class="contain">
+        <div class="box"></div>
+    </div>
+    <div class="meo">
+        <div class="ga"></div>
+        <div class="cho"></div>
+    </div>
+</body>
+</html>
