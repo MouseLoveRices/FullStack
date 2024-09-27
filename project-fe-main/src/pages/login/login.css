@@ -1,0 +1,9 @@
+.bg-login-page {
+    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url("./hero-img.jpg");
+    height: 100vh;
+    /* background: green; */
+}
+
+.button-login-page {
+    background: #81c408 !important;
+}
