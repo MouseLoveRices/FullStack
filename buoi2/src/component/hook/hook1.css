@@ -1,0 +1,16 @@
+.hook1{
+    background: orangered;
+    display: none;
+}
+.hook1.active{
+    background-color: aqua;
+    display: block;
+}
+.meo{
+    height: 300px;
+    background: greenyellow;
+    display: none;
+}
+.meo.active{
+    display: block;
+}

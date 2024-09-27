@@ -1,0 +1,58 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden !important;
+}
+.row{
+    width: 90%;
+    height: auto;
+    background: aqua;
+
+}
+.card{
+    width: 100%;
+    height: 100%;
+    
+}
+h6,span{
+    opacity: 0.6;
+    position: relative;
+}
+span::before{
+    content: '';
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 50%;
+}
+.icon{
+    color: #f9bf00;
+}
+a{
+    font-weight: bold;
+    color: #44d7b6 !important;
+}
+.col-6{
+    height: 100%;
+    position: relative;
+}
+.col-6::before{
+    content: "12 off";
+    background-color: rgb(190, 59, 59);
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    width: 50px;
+    z-index: 10;
+    position: absolute;
+    top: 1%;
+    left:7%;
+}
+.list-group{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+}

@@ -1,0 +1,9 @@
+.contain{
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: chartreuse;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
